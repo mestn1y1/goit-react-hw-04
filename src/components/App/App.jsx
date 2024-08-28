@@ -10,7 +10,7 @@ export default function App() {
   const [images, setImages] = useState([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
-  const [modalImage, setModalImage] = useState(false);
+  const [modalImage, setModalImage] = useState(null);
 
   const handleSearch = async (topic) => {
     try {
@@ -37,11 +37,13 @@ export default function App() {
     <>
       <SearchBAr onSearch={handleSearch} />
       <ImageGallery images={images} onOpenModal={openModal} />
-      <ImageModal
-        isOpen={modalImage}
-        onRequestClose={closeModal}
-        image={modalImage}
-      />
+      {modalImage && (
+        <ImageModal
+          isOpen={modalImage}
+          onRequestClose={closeModal}
+          image={modalImage}
+        />
+      )}
 
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more

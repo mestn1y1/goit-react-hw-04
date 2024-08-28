@@ -1,10 +1,11 @@
 import ImageCard from "../ImageCard/ImageCard";
+import css from "./ImageGallery.module.css";
 
 export default function ImageGallery({ images, onOpenModal }) {
   return (
-    <ul>
+    <ul className={css.gallery}>
       {images.length > 0 && (
-        <li>
+        <li className={css.galleryList}>
           {images.map((image) => (
             <ImageCard key={image.id} image={image} onOpenModal={onOpenModal} />
           ))}

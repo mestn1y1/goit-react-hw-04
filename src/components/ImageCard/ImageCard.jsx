@@ -1,8 +1,12 @@
+import css from "./ImageCard.module.css";
 export default function ImageCard({ image, onOpenModal }) {
-  console.log(image);
   return (
-    <div onClick={() => onOpenModal(image)} style={{ cursor: "pointer" }}>
-      <img src={image.urls.small} alt={image.description} />
+    <div onClick={() => onOpenModal(image)} className={css.itemImg}>
+      <img
+        src={image.urls.small_s3}
+        alt={image.description}
+        className={css.galleryImg}
+      />
     </div>
   );
 }

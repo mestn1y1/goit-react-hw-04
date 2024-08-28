@@ -1,3 +1,5 @@
+import css from "./SearchBar.module.css";
+
 export default function SearchBAr({ onSearch }) {
   const handleSubmit = (evt) => {
     evt.preventDefault();
@@ -9,8 +11,8 @@ export default function SearchBAr({ onSearch }) {
   };
 
   return (
-    <header>
-      <form onSubmit={handleSubmit}>
+    <header className={css.header}>
+      <form onSubmit={handleSubmit} className={css.form}>
         <input
           type="text"
           autoComplete="off"
@@ -18,7 +20,9 @@ export default function SearchBAr({ onSearch }) {
           placeholder="Search images and photos"
           name="topic"
         />
-        <button type="submit">Search</button>
+        <button type="submit" className={css.btn}>
+          Search
+        </button>
       </form>
     </header>
   );

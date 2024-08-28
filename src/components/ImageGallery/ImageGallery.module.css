@@ -1,0 +1,17 @@
+.galleryList {
+  display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
+  gap: 16px; /* Отступы между элементами */
+  list-style: none; /* Убирает маркеры списка */
+  padding: 0; /* Убирает отступы от контейнера */
+  margin: 0; /* Убирает внешние отступы */
+}
+
+.galleryList > li {
+  flex: 1 1 calc(25% - 16px); /* 25% ширины минус отступы */
+  box-sizing: border-box; /* Учитывает padding и border в ширине элемента */
+}
+
+.gallery {
+  padding-top: 40px;
+}
