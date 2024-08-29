@@ -10,10 +10,11 @@ export default function ImageModal({ isOpen, onRequestClose, image }) {
       className={css.modal}
       overlayClassName={css.overlay}
     >
-      {/* <button onClick={onRequestClose} className={css.closeButton}>
-        X
-      </button> */}
-      <img src={image.urls.full} alt={image.description} className={css.img} />
+      <img
+        src={image.urls.regular}
+        alt={image.description}
+        className={css.img}
+      />
     </Modal>
   );
 }
