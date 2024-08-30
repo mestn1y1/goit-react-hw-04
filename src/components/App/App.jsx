@@ -23,7 +23,6 @@ export default function App() {
   const handleLoadMore = () => {
     if (page < totalPages) {
       setPage(page + 1);
-      loadMoreBtnRef.current?.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -42,12 +41,12 @@ export default function App() {
         setLoading(true);
         const { images: newImages, totalPages: newTotalPages } =
           await searchImagesApi(topic, page);
+
         if (page === 1 && newImages.length === 0) {
           toast.error("No images found for this search term.", {
             duration: 1500,
           });
         }
-
         setImages((prevImages) =>
           page === 1 ? newImages : [...prevImages, ...newImages]
         );
@@ -61,6 +60,12 @@ export default function App() {
 
     getImages();
   }, [topic, page]);
+
+  useEffect(() => {
+    if (images.length > 0 && page > 1) {
+      loadMoreBtnRef.current?.scrollIntoView({ behavior: "smooth" });
+    }
+  }, [images, page]);
 
   const openModal = (image) => {
     setModalImage(image);
