@@ -1,13 +1,8 @@
-.galleryList {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* Позволяет элементам переноситься на следующую строку */
-  gap: 16px; /* Отступы между элементами */
-  list-style: none; /* Убирает маркеры списка */
-  padding: 0; /* Убирает отступы от контейнера */
-  margin: 0; /* Убирает внешние отступы */
-}
-
 .gallery {
-  padding-top: 40px;
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 0 auto;
 }
